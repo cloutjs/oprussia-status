@@ -5,9 +5,12 @@ import requests
 app = Flask(__name__)
 api = Api(app)
 
+gist_id = "gist id"
+github_user = "github username"
+
 @app.route('/', methods=['GET'])
 def index():
-  r = requests.get("https://gist.githubusercontent.com/cloutjs/b6e7e2150e5e0a5804968aea3cf85986/raw/")
+  r = requests.get("https://gist.githubusercontent.com/" + github_user + "/" + gist_id + "/raw/")
   return r.text
 
 if __name__ == "__main__":

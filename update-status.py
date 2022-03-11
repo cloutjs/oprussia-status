@@ -25,6 +25,6 @@ while True:
     headers = {'Authorization': f'token {token}'}
     r = requests.patch('https://api.github.com/gists/' + gist_id, data=json.dumps({'files':{filename:{"content":e}}}),headers=headers) 
     time.sleep(65)
-    r = requests.get("https://gist.githubusercontent.com/ + github_user + "/" + gist_id)
+    r = requests.get("https://gist.githubusercontent.com/" + github_user + "/" + gist_id)
     time.sleep(200)
 
